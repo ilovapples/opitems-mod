@@ -1,2 +1,0 @@
-- name: Publish Minecraft Mods
-  uses: Kir-Antipov/mc-publish@v3.2
