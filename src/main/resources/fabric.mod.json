@@ -6,7 +6,7 @@
   "name": "Test Mod",
   "description": "This is my very bad test mod.",
   "authors": [
-    "Me!"
+    "ilovapples"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/test/icon.png",
+  "icon": "assets/test/icon.PNG",
 
   "environment": "*",
   "entrypoints": {
