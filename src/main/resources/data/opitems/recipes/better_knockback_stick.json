@@ -20,7 +20,7 @@
         }
     },
     "result": {
-        "item": "minecraft:knowledge_book",
+        "item": "opitems:placeholder_better",
         "count": 1
     },
     "group": "knockback_sticks"
