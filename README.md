@@ -13,7 +13,7 @@ Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are
 | - | - |
 | ![Knockback Stick Recipe](readme-assets/knockback_stick_recipe.png) | ![Better Knockback Stick Recipe](readme-assets/better_knockback_stick_recipe.png) |
 
-(Stick in the Better Knockback Stick Recipe is actually a Knockback Stick, not a stick.)
+(The stick in the Better Knockback Stick Recipe is actually a Knockback Stick, not a stick.)
 ## Build
 `git clone` the repo, navigate to it, and run one of the following in the terminal/command prompt:
 - On Windows:
