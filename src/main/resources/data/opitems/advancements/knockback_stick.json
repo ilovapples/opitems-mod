@@ -16,14 +16,14 @@
     "requirement": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "opitems:knockback_stick"
+        "recipe": "opitems:knockback_stick_recipe"
       }
     }
   },
   "rewards": {
     "function": "opitems:give_knockbackstick",
     "recipes": [
-      "opitems:knockback_stick"
+      "opitems:knockback_stick_recipe"
     ]
   }
 }
