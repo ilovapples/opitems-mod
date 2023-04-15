@@ -14,7 +14,7 @@
   },
 
   "license": "MIT",
-  "icon": "assets/opitems/textures/item/better_knockback_stick.png",
+  "icon": "assets/opitems/icon.png",
 
   "environment": "*",
   "entrypoints": {

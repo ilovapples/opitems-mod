@@ -33,8 +33,10 @@ public class OPItems implements ModInitializer {
 			.fireproof());
 	
 	// placeholder for crafting
-	public final Item PLACEHOLDER_BETTER = new Item(new FabricItemSettings());
-	public final Item PLACEHOLDER_NORMAL = new Item(new FabricItemSettings());
+	public final BetterKnockbackStick PLACEHOLDER_BETTER = new BetterKnockbackStick(new FabricItemSettings()
+			.rarity(Rarity.EPIC));
+	public final KnockbackStick PLACEHOLDER_NORMAL = new KnockbackStick(new FabricItemSettings()
+			.rarity(Rarity.RARE));
 	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.

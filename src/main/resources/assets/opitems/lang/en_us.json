@@ -8,5 +8,8 @@
   "item.opitems.better_knockback_stick.tooltip0": "The most OP item in all of the realm, the Better Knockback Stick",
   "item.opitems.better_knockback_stick.tooltip1": "is so powerful, it can one shot almost anything!",
   "item.opitems.better_knockback_stick.tooltip2": "(excluding boss mobs of course!) You wouldn't want to mess with",
-  "item.opitems.better_knockback_stick.tooltip3": "someone that has this legendary item."
+  "item.opitems.better_knockback_stick.tooltip3": "someone that has this legendary item.",
+
+  "item.opitems.placeholder_better": "Better Knockback Stick",
+  "item.opitems.placeholder_normal": "Knockback Stick"
 }
