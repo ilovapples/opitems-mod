@@ -1,9 +1,14 @@
-# Fabric Example Mod
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# OP Items
 
-## Setup
+## Contents
+Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are both very overpowered.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Build
+`git clone` the repo, navigate to it, and run one of the following in the terminal/command prompt:
+- On Windows:
+  - `gradlew.bat build`
+- On Linux/MacOS X:
+  - `./gradlew build`
+  
+The .jar file will be in the build/libs directory.
