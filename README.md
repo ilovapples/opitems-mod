@@ -4,6 +4,9 @@
 ## Contents
 Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are both very overpowered.
 
+| Knockback Stick | Better Knockback Stick |
+| - | - |
+| ![Knockback Stick Texture](https://raw.githubusercontent.com/ilovapples/test-mod/1.19/readme-assets/knockback_stick.png)
 ## Build
 `git clone` the repo, navigate to it, and run one of the following in the terminal/command prompt:
 - On Windows:
