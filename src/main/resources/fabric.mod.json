@@ -13,8 +13,8 @@
     "sources": "https://github.com/ilovapples/test-mod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/opitems/icon.png",
+  "license": "MIT",
+  "icon": "assets/opitems/textures/items/better_knockback_stick.png",
 
   "environment": "*",
   "entrypoints": {
