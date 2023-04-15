@@ -18,7 +18,9 @@ Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are
 `git clone` the repo, navigate to it, and run one of the following in the terminal/command prompt:
 - On Windows:
   - `gradlew.bat build`
+  - Or run `BUILD_MOD.bat`
 - On Linux/MacOS X:
   - `./gradlew build`
+  - Or run `BUILD_MOD.sh` with `bash`
   
 The .jar file will be in the build/libs directory.
