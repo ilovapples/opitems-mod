@@ -35,6 +35,11 @@ public class OPItems implements ModInitializer {
 			.maxCount(1)
 			.rarity(Rarity.EPIC)
 			.fireproof());
+	
+	// placeholder for crafting
+	public final Item PLACEHOLDER_BETTER = new Item(new FabricItemSettings());
+	public final Item PLACEHOLDER_NORMAL = new Item(new FabricItemSettings());
+	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -43,5 +48,8 @@ public class OPItems implements ModInitializer {
 		LOGGER.info("ilovapples' OP Items Mod has been successfully initialized!");
 		Registry.register(Registries.ITEM, new Identifier("opitems", "knockback_stick"), KNOCKBACK_STICK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "better_knockback_stick"), BETTER_KNOCKBACK_STICK);
+		
+		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);
 	}
 }
