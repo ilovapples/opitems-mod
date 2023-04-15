@@ -1,13 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.apples.test.mixin",
+  "package": "com.apples.opitems.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "TestMixin"
+    "InitMixin"
   ],
   "client": [
-    "TestMod"
+    "InitMixin"
   ],
   "injectors": {
     "defaultRequire": 1

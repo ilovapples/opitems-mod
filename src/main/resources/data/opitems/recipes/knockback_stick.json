@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "D#D",
+        "I/I",
+        "D#D"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:diamond_sword"
+        },
+        "I": {
+            "item": "minecraft:iron_boots"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "minecraft:knowledge_book",
+        "count": 1
+    },
+    "group": "knockback_sticks"
+}

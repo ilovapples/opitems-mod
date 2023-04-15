@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "testmod",
+  "id": "opitems",
   "version": "${version}",
 
-  "name": "Test Mod",
+  "name": "OP Items",
   "description": "This is my very bad test mod.",
   "authors": [
     "ilovapples"
@@ -14,22 +14,22 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/test/icon.PNG",
+  "icon": "assets/opitems/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.apples.test.TestMod"
+      "com.apples.opitems.OPItems"
     ]
   },
   "mixins": [
-    "testmod.mixins.json"
+    "opitems.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
-    "minecraft": "~1.19.4",
+    "minecraft": "~1.19.3",
     "java": ">=17"
   },
   "suggests": {

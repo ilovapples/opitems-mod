@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:stick",
+      "nbt": "{Enchantments:[{id:knockback,lvl:1}]}"
+    },
+    "title": "Knockback Sticks",
+    "description": "",
+    "background": "minecraft:stone",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "opitems:knockback_stick"
+      }
+    }
+  },
+  "rewards": {
+    "function": "opitems:give_knockbackstick",
+    "recipes": [
+      "opitems:knockback_stick"
+    ]
+  }
+}
