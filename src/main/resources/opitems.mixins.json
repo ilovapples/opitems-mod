@@ -3,13 +3,9 @@
   "minVersion": "0.8",
   "package": "com.apples.opitems.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "InitMixin"
-  ],
-  "client": [
-    "InitMixin"
-  ],
+  "mixins": [],
+  "client": [],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
   }
 }

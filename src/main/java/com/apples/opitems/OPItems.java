@@ -3,10 +3,7 @@ package com.apples.opitems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.*;
-import net.minecraft.text.Text;
-import net.minecraft.world.World;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
@@ -17,7 +14,6 @@ import com.apples.opitems.KnockbackSticks.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 
 
 public class OPItems implements ModInitializer {
