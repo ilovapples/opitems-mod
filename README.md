@@ -1,6 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # OP Items
 
+![Versions: 1.19.3-1.19.4](https://img.shields.io/badge/Versions-1.19.3--1.19.4-brightgreen.svg?style=flat-square)
 ## Contents
 Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are both very overpowered.
 
@@ -14,6 +15,13 @@ Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are
 | ![Knockback Stick Recipe](readme-assets/knockback_stick_recipe.png) | ![Better Knockback Stick Recipe](readme-assets/better_knockback_stick_recipe.png) |
 
 (The stick in the Better Knockback Stick Recipe is actually a Knockback Stick, not a stick.)
+
+## Dependencies
+The dependencies are:
+| Dependency | Version |
+| - | - |
+| Fabric API | Any Version|
+
 ## Build
 `git clone` the repo, navigate to it, and run one of the following in the terminal/command prompt:
 - On Windows:
