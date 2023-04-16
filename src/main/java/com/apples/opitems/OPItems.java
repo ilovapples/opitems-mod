@@ -3,17 +3,20 @@ package com.apples.opitems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Material;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
-import com.apples.opitems.KnockbackSticks.*;
+import com.apples.opitems.items.*;
+import com.apples.opitems.enchantments.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 
 public class OPItems implements ModInitializer {
@@ -27,17 +30,22 @@ public class OPItems implements ModInitializer {
 			.maxCount(1)
 			.rarity(Rarity.RARE));
 
-	public final BetterKnockbackStick BETTER_KNOCKBACK_STICK = new BetterKnockbackStick(new FabricItemSettings()
+
+	public static final BetterKnockbackStick BETTER_KNOCKBACK_STICK = new BetterKnockbackStick(new FabricItemSettings()
 			.maxCount(1)
 			.rarity(Rarity.EPIC)
 			.fireproof());
-	
+
 	// placeholder for crafting
 	public final BetterKnockbackStick PLACEHOLDER_BETTER = new BetterKnockbackStick(new FabricItemSettings()
 			.rarity(Rarity.EPIC));
+
 	public final KnockbackStick PLACEHOLDER_NORMAL = new KnockbackStick(new FabricItemSettings()
 			.rarity(Rarity.RARE));
-	
+
+
+	public static Enchantment POISON_TIPPED = new PoisonTipped();
+
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -49,5 +57,7 @@ public class OPItems implements ModInitializer {
 		
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);
+
+		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "poison_tipped"), POISON_TIPPED);
 	}
 }

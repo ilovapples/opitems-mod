@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class KnockbackSticks {
+public class items {
     public static class KnockbackStick extends Item {
         public KnockbackStick(Settings settings) {
             super(settings);

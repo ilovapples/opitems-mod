@@ -11,5 +11,9 @@
   "item.opitems.better_knockback_stick.tooltip3": "someone that has this legendary item.",
 
   "item.opitems.placeholder_better": "Better Knockback Stick",
-  "item.opitems.placeholder_normal": "Knockback Stick"
+  "item.opitems.placeholder_normal": "Knockback Stick",
+
+  "enchantment.opitems.poison_tipped": "Poison Tipped",
+
+  "block.opitems.test_block": "Test Block"
 }
