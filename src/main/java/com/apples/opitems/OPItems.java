@@ -45,6 +45,8 @@ public class OPItems implements ModInitializer {
 
 
 	public static Enchantment POISON_TIPPED = new PoisonTipped();
+	public static Enchantment FROST_TIPPED = new FrostTipped();
+	public static Enchantment WITHER_TIPPED = new WitherTipped();
 
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -59,5 +61,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);
 
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "poison_tipped"), POISON_TIPPED);
+		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "frost_tipped"), FROST_TIPPED);
+		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "wither_tipped"), WITHER_TIPPED);
 	}
 }
