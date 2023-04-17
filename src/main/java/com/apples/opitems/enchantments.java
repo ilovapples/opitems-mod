@@ -59,7 +59,7 @@ public class enchantments {
     
     public static class WitherTipped extends Enchantment {
         public WitherTipped() {
-            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+            super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
         }
         @Override
         public int getMinPower(int level) {
