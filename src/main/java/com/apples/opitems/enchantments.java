@@ -92,12 +92,12 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 1;
+            return 10;
         }
 
         @Override
         public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-            user.addStatusEffect(
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20 * 2 * level, level));
 
             super.onTargetDamaged(user, target, level);
         }
