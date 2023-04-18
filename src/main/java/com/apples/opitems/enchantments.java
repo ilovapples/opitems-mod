@@ -11,7 +11,7 @@ import net.minecraft.entity.effect.StatusEffects;
 public class enchantments {
     public static class PoisonTipped extends Enchantment {
         public PoisonTipped() {
-            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
         }
         @Override
         public int getMinPower(int level) {
@@ -25,8 +25,8 @@ public class enchantments {
 
         @Override
         public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-            if(target instanceof LivingEntity) {
-                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 2 * level, level));
+            if (target instanceof LivingEntity) {
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 2 * level, level, false, false, false));
             }
 
             super.onTargetDamaged(user, target, level);
@@ -35,7 +35,7 @@ public class enchantments {
     
     public static class FrostTipped extends Enchantment {
         public FrostTipped() {
-            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
         }
         @Override
         public int getMinPower(int level) {
@@ -49,8 +49,8 @@ public class enchantments {
 
         @Override
         public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-            if(target instanceof LivingEntity) {
-                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 2 * level, level));
+            if (target instanceof LivingEntity) {
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 2 * level, level, false, false, false));
             }
 
             super.onTargetDamaged(user, target, level);
@@ -59,7 +59,7 @@ public class enchantments {
     
     public static class WitherTipped extends Enchantment {
         public WitherTipped() {
-            super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+            super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
         }
         @Override
         public int getMinPower(int level) {
@@ -73,8 +73,8 @@ public class enchantments {
 
         @Override
         public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-            if(target instanceof LivingEntity) {
-                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 20 * 2 * level, level));
+            if (target instanceof LivingEntity) {
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 20 * 2 * level, level, false, false, false));
             }
 
             super.onTargetDamaged(user, target, level);
@@ -83,7 +83,7 @@ public class enchantments {
     
     public static class InvisHit extends Enchantment {
         public InvisHit() {
-            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
         }
         @Override
         public int getMinPower(int level) {
@@ -97,9 +97,36 @@ public class enchantments {
         
         @Override
         public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20 * 2 * level, level));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20 * 2 * level, level, false, false, false));
 
             super.onTargetDamaged(user, target, level);
+        }
+    }
+
+    public static class OPEnch extends Enchantment {
+        public OPEnch() {
+            super(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
+        }
+
+        @Override
+        public int getMinPower(int level) {
+            return 1;
+        }
+
+        @Override
+        public int getMaxLevel() {
+            return 10;
+        }
+
+        @Override
+        public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+            if (target instanceof LivingEntity) {
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 20 * 2 * level, level, false, false, false));
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 2 * level, level, false, false, false));
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 2 * level, level, false, false, false));
+            }
+
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20 * 2 * level, level, false, false, true));
         }
     }
 }

@@ -14,5 +14,8 @@
   "item.opitems.placeholder_normal": "Knockback Stick",
 
   "enchantment.opitems.poison_tipped": "Poison Tipped",
-
+  "enchantment.opitems.frost_tipped": "Frost Tipped",
+  "enchantment.opitems.wither_tipped": "Wither Tipped",
+  "enchantment.opitems.invis_hit": "Invisibility Hit",
+  "enchantment.opitems.op_ench": "OP Enchantment"
 }

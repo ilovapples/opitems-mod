@@ -45,6 +45,8 @@ public class OPItems implements ModInitializer {
 	public static Enchantment POISON_TIPPED = new PoisonTipped();
 	public static Enchantment FROST_TIPPED = new FrostTipped();
 	public static Enchantment WITHER_TIPPED = new WitherTipped();
+	public static Enchantment INVIS_HIT = new InvisHit();
+	public static Enchantment OP_ENCH = new OPEnch();
 
 
 	public void onInitialize() {
@@ -62,5 +64,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "poison_tipped"), POISON_TIPPED);
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "frost_tipped"), FROST_TIPPED);
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "wither_tipped"), WITHER_TIPPED);
+		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "invis_hit"), INVIS_HIT);
+		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "op_ench"), OP_ENCH);
 	}
 }
