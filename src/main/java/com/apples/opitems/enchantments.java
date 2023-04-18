@@ -81,7 +81,7 @@ public class enchantments {
         }
     }
     
-    /*public static class InvisHit extends Enchantment {
+    public static class InvisHit extends Enchantment {
         public InvisHit() {
             super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
         }
@@ -94,12 +94,12 @@ public class enchantments {
         public int getMaxLevel() {
             return 10;
         }
-
+        
         @Override
         public void onTargetDamaged(LivingEntity user, Entity target, int level) {
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20 * 2 * level, level));
 
             super.onTargetDamaged(user, target, level);
         }
-    }*/
+    }
 }
