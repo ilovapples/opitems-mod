@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class InitMixin {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        OPItems.LOGGER.info("All resources fully !");
+        OPItems.LOGGER.info("All resources fully initialized!");
     }
 }
