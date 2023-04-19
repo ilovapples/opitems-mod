@@ -32,8 +32,16 @@ public class OPItems implements ModInitializer {
 			.maxCount(1)
 			.rarity(Rarity.EPIC));
 
-	public static final BetterKnockbackStick FIRE_STICK = new BetterKnockbackStick(new FabricItemSettings()
+	public static final FireStick FIRE_STICK = new FireStick(new FabricItemSettings()
 			.maxCount(1)
+			.rarity(Rarity.EPIC)
+			.fireproof());
+	
+	public static final RawBlazeCore RAW_BLAZE_CORE = new RawBlazeCore(new FabricItemSettings()
+			.rarity(Rarity.RARE)
+			.fireproof());
+	
+	public static final RefinedBlazeCore REFINED_BLAZE_CORE = new RefinedBlazeCore(new FabricItemSettings()
 			.rarity(Rarity.EPIC)
 			.fireproof());
 
@@ -65,6 +73,8 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "knockback_stick"), KNOCKBACK_STICK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "better_knockback_stick"), BETTER_KNOCKBACK_STICK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "fire_stick"), FIRE_STICK);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "raw_blaze_core"), RAW_BLAZE_CORE); 
+		Registry.register(Registries.ITEM, new Identifier("opitems", "refined_blaze_core"), REFINED_BLAZE_CORE); 
 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);
