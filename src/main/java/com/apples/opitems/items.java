@@ -39,4 +39,17 @@ public class items {
             tooltip.add(Text.translatable("item.opitems.better_knockback_stick.tooltip3"));
         }
     }
+
+    public static class FireStick extends KnockbackStick {
+        public FireStick(Settings settings) {
+            super(settings);
+        }
+
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.fire_stick.tooltip0"));
+            tooltip.add(Text.translatable("item.opitems.fire_stick.tooltip1"));
+            tooltip.add(Text.translatable("item.opitems.fire_stick.tooltip2"));
+        }
+    }
 }

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NMN",
+    "M/M",
+    "BSB"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    },
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "/": {
+      "item": "opitems:knockback_stick"
+    }
+  },
+  "result": {
+    "item": "opitems:placeholder_fire",
+    "count": 1
+  },
+  "group": "knockback_sticks"
+}

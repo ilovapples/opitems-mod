@@ -1,5 +1,6 @@
 package com.apples.opitems;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -80,6 +81,30 @@ public class enchantments {
             super.onTargetDamaged(user, target, level);
         }
     }
+
+    public static class WeaknessTipped extends Enchantment {
+        public WeaknessTipped() {
+            super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
+        }
+        @Override
+        public int getMinPower(int level) {
+            return 1;
+        }
+
+        @Override
+        public int getMaxLevel() {
+            return 10;
+        }
+
+        @Override
+        public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+            if (target instanceof LivingEntity) {
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 20 * 2 * level, level, false, false, false));
+            }
+
+            super.onTargetDamaged(user, target, level);
+        }
+    }
     
     public static class InvisHit extends Enchantment {
         public InvisHit() {
@@ -103,6 +128,7 @@ public class enchantments {
         }
     }
 
+
     public static class OPEnch extends Enchantment {
         public OPEnch() {
             super(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
@@ -115,7 +141,7 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 10;
+            return 15;
         }
 
         @Override
@@ -124,6 +150,7 @@ public class enchantments {
                 ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 20 * 2 * level, level, false, false, false));
                 ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 2 * level, level, false, false, false));
                 ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 2 * level, level, false, false, false));
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 20 * 2 * level, level, false, false, false));
             }
 
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20 * 2 * level, level, false, false, true));
