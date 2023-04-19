@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.entity.mob;
 
 import com.apples.opitems.items.*;
 import com.apples.opitems.enchantments.*;
@@ -63,7 +64,7 @@ public class OPItems implements ModInitializer {
 	public static Enchantment WEAKNESS_TIPPED = new WeaknessTipped();
 	public static Enchantment INVIS_HIT = new InvisHit();
 	public static Enchantment OP_ENCH = new OPEnch();
-
+	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
