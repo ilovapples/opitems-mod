@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "NMN",
+    "NCN",
     "M/M",
     "BSB"
   ],
@@ -17,6 +17,9 @@
     },
     "B": {
       "item": "minecraft:blaze_rod"
+    },
+    "C": {
+      "item": "opitems:refined_blaze_core"
     },
     "/": {
       "item": "opitems:knockback_stick"
