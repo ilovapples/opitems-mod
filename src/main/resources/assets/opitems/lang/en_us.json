@@ -14,6 +14,9 @@
   "item.opitems.fire_stick.tooltip0": "A stick formed deep in the depths of the",
   "item.opitems.fire_stick.tooltip1": "Nether, this stick has adapted to the intense",
   "item.opitems.fire_stick.tooltip2": "heat, becoming fireproof, like Netherite.",
+  
+  "item.opitems.raw_blaze_core": "Raw Blaze Core",
+  "item.opitems.refined_blaze_core": "Refined Blaze Core",
 
 
   "item.opitems.placeholder_better": "Better Knockback Stick",
