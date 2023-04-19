@@ -52,4 +52,26 @@ public class items {
             tooltip.add(Text.translatable("item.opitems.fire_stick.tooltip2"));
         }
     }
+    
+    public static class RawBlazeCore extends Item {
+        public RawBlazeCore(Settings settings) {
+            super(settings);
+        }
+        
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.raw_blaze_core.tooltip0"));
+        }
+    }
+    
+    public static class RefinedBlazeCore extends Item {
+        public RefinedBlazeCore(Settings settings) {
+            super(settings);
+        }
+        
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.refined_blaze_core.tooltip0"));
+        }
+    }
 }
