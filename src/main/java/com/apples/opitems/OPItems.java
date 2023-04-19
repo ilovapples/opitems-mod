@@ -8,7 +8,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.minecraft.entity.mob;
 
 import com.apples.opitems.items.*;
 import com.apples.opitems.enchantments.*;
@@ -33,6 +32,8 @@ public class OPItems implements ModInitializer {
 			.maxCount(1)
 			.rarity(Rarity.EPIC));
 
+	
+	// Fire Stick items: Fire Stick, Raw Blaze Core, Refined Blaze Core
 	public static final FireStick FIRE_STICK = new FireStick(new FabricItemSettings()
 			.maxCount(1)
 			.rarity(Rarity.EPIC)
@@ -54,7 +55,7 @@ public class OPItems implements ModInitializer {
 	public final KnockbackStick PLACEHOLDER_NORMAL = new KnockbackStick(new FabricItemSettings()
 			.rarity(Rarity.RARE));
 
-	public final KnockbackStick PLACEHOLDER_FIRE = new KnockbackStick(new FabricItemSettings()
+	public final FireStick PLACEHOLDER_FIRE = new FireStick(new FabricItemSettings()
 			.rarity(Rarity.EPIC));
 
 
