@@ -39,16 +39,26 @@ public class OPItems implements ModInitializer {
 			.rarity(Rarity.EPIC)
 			.fireproof());
 	
+	/* 
+	Raw Blaze Core:
+		Dropped from Blazes with a 1.25% chance.
+		Combine with Netherite Scrap in Smithing Table to get Refined Blaze Core
+	*/
 	public static final RawBlazeCore RAW_BLAZE_CORE = new RawBlazeCore(new FabricItemSettings()
 			.rarity(Rarity.RARE)
 			.fireproof());
 	
+	/*
+	Refined Blaze Core:
+		Used to craft the Fire Stick, among other things.
+		Does nothing by itself.
+	*/
 	public static final RefinedBlazeCore REFINED_BLAZE_CORE = new RefinedBlazeCore(new FabricItemSettings()
 			.rarity(Rarity.EPIC)
 			.fireproof());
 
 
-	// placeholder for crafting
+	// placeholders for crafting (it looks better like this I promise)
 	public final BetterKnockbackStick PLACEHOLDER_BETTER = new BetterKnockbackStick(new FabricItemSettings()
 			.rarity(Rarity.EPIC));
 
