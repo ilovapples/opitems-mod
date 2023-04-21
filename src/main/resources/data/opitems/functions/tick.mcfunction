@@ -1,2 +1,5 @@
-execute as @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] at @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] unless block ~ ~ ~ minecraft:water run effect give @s minecraft:fire_resistance 10 1 true
-execute as @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] at @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] unless block ~ ~ ~ minecraft:water run effect give @s minecraft:fire_resistance 10 1 true
+execute as @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] at @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] unless block ~ ~ ~ minecraft:water run summon minecraft:small_fireball ~ ~2 ~ {Motion:[0.0,-10.0,0.0], ActiveEffects:[{Id:14,Amplifier:1,Duration:999999}]}
+execute as @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] at @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] unless block ~ ~ ~ minecraft:water run effect give @s minecraft:fire_resistance 1 1 true
+execute as @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] at @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] unless block ~ ~ ~ minecraft:water run fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:fire
+execute as @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] at @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] unless block ~ ~ ~ minecraft:water run effect give @s minecraft:fire_resistance 1 1 true
+execute at @e[type=item, name="Raw Blaze Core"] unless block ~ ~-.01 ~ air unless block ~ ~ ~ water run particle minecraft:lava ~ ~ ~ 0.25 0.25 0.25 1 1 force
