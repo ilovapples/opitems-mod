@@ -14,10 +14,18 @@
   "item.opitems.fire_stick.tooltip0": "A stick formed deep in the depths of the",
   "item.opitems.fire_stick.tooltip1": "Nether, this stick has adapted to the intense",
   "item.opitems.fire_stick.tooltip2": "heat, becoming fireproof, like Netherite.",
-  
+
   "item.opitems.raw_blaze_core": "Raw Blaze Core",
-  "item.opitems.raw_blaze_core.tooltip0": "",
+  "item.opitems.raw_blaze_core.tooltip0": "A core left over from a blaze, this item",
+  "item.opitems.raw_blaze_core.tooltip1": "is so hot, that holding it sets you on fire.",
+
   "item.opitems.refined_blaze_core": "Refined Blaze Core",
+  "item.opitems.refined_blaze_core.tooltip0": "A refined version of the Raw Blaze Core. This",
+  "item.opitems.refined_blaze_core.tooltip1": "only has one use: to craft the Fire Stick.",
+
+  "item.opitems.blaze_core_residue": "Blaze Core Residue",
+  "item.opitems.blaze_core_residue.tooltip0": "Residue left over after the refining of a",
+  "item.opitems.blaze_core_residue.tooltip1": "Raw Blaze Core into a Refined Blaze Core.",
 
 
   "item.opitems.placeholder_better": "Better Knockback Stick",

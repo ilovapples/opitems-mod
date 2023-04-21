@@ -63,7 +63,7 @@ public class OPItems implements ModInitializer {
 			.rarity(Rarity.EPIC)
 			.fireproof());
 
-	public static final RawBlazeCore USED_BLAZE_CORE = new RawBlazeCore(new FabricItemSettings());
+	public static final BlazeCoreResidue BLAZE_CORE_RESIDUE = new BlazeCoreResidue(new FabricItemSettings());
 
 	// placeholders for crafting (it looks better like this I promise)
 	public final BetterKnockbackStick PLACEHOLDER_BETTER = new BetterKnockbackStick(new FabricItemSettings()
@@ -106,6 +106,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "fire_stick"), FIRE_STICK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "raw_blaze_core"), RAW_BLAZE_CORE); 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "refined_blaze_core"), REFINED_BLAZE_CORE); 
+		Registry.register(Registries.ITEM, new Identifier("opitems", "blaze_core_residue"), BLAZE_CORE_RESIDUE); 
 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);

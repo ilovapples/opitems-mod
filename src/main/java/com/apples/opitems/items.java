@@ -61,6 +61,7 @@ public class items {
         @Override
         public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
             tooltip.add(Text.translatable("item.opitems.raw_blaze_core.tooltip0"));
+            tooltip.add(Text.translatable("item.opitems.raw_blaze_core.tooltip1"));
         }
     }
     
@@ -72,6 +73,19 @@ public class items {
         @Override
         public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
             tooltip.add(Text.translatable("item.opitems.refined_blaze_core.tooltip0"));
+            tooltip.add(Text.translatable("item.opitems.refined_blaze_core.tooltip1"));
+        }
+    }
+    
+    public static class BlazeCoreResidue extends Item {
+        public BlazeCoreResidue(Settings settings) {
+            super(settings);
+        }
+        
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.blaze_core_residue.tooltip0"));
+            tooltip.add(Text.translatable("item.opitems.blaze_core_residue.tooltip1"));
         }
     }
 }
