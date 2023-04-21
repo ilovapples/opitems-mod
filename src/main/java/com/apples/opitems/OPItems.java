@@ -2,14 +2,18 @@ package com.apples.opitems;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.FixedBufferInputStream;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.entity.mob.BlazeEntity;
 
 import com.apples.opitems.items.*;
 import com.apples.opitems.enchantments.*;
@@ -78,6 +82,28 @@ public class OPItems implements ModInitializer {
 	public static Enchantment WEAKNESS_TIPPED = new WeaknessTipped();
 	public static Enchantment INVIS_HIT = new InvisHit();
 	public static Enchantment OP_ENCH = new OPEnch();
+	
+	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
+    	.displayName(Text.literal("OP Items Group"))
+    	.icon(() -> new ItemStack(BETTER_KNOCKBACK_STICK))
+    	.entries((enabledFeatures, entries, operatorEnabled) -> {
+        	entries.add(KNOCKBACK_STICK);
+			entries.add(BETTER_KNOCKBACK_STICK);
+			entries.add(FIRE_STICK);
+			entries.add(RAW_BLAZE_CORE);
+			entries.add(REFINED_BLAZE_CORE);
+    	})
+    	.build();
+
+	private static final Identifier BLAZE_LOOT_TABLE_ID = BlazeEntity.getLootTableId();
+	LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+		if (source.isBuiltin() && BLAZE_LOOT_TABEL_ID.equals(id)) {
+			LootPool.Builder poolBuilder = LootPool.builder()
+					.with(ItemEntry.builder(RAW_BLAZE_CORE));
+	
+			tableBuilder.pool(poolBuilder);
+		}
+	});
 	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
