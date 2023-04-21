@@ -94,16 +94,6 @@ public class OPItems implements ModInitializer {
 			entries.add(REFINED_BLAZE_CORE);
     	})
     	.build();
-
-	private static final Identifier BLAZE_LOOT_TABLE_ID = BlazeEntity.getLootTableId();
-	LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-		if (source.isBuiltin() && BLAZE_LOOT_TABEL_ID.equals(id)) {
-			LootPool.Builder poolBuilder = LootPool.builder()
-					.with(ItemEntry.builder(RAW_BLAZE_CORE));
-	
-			tableBuilder.pool(poolBuilder);
-		}
-	});
 	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
