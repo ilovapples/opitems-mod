@@ -46,15 +46,6 @@ public class OPItems implements ModInitializer {
 			.rarity(Rarity.EPIC)
 			.fireproof());
 	
-	/* 
-	Raw Blaze Core:
-		Dropped from Blazes with a 1.25% chance.
-		Combine with Netherite Scrap in Smithing Table to get Refined Blaze Core
-	*/
-	public static final RawBlazeCore RAW_BLAZE_CORE = new RawBlazeCore(new FabricItemSettings()
-			.rarity(Rarity.RARE)
-			.fireproof());
-	
 	/*
 	Refined Blaze Core:
 		Used to craft the Fire Stick, among other things.
@@ -63,9 +54,21 @@ public class OPItems implements ModInitializer {
 	public static final RefinedBlazeCore REFINED_BLAZE_CORE = new RefinedBlazeCore(new FabricItemSettings()
 			.rarity(Rarity.EPIC)
 			.fireproof());
+	// residue left over after refining raw blaze cores
+	public static final BlazeCoreResidue BLAZE_CORE_RESIDUE = new BlazeCoreResidue(new FabricItemSettings()
+			.rarity(Rarity.UNCOMMON)
+			.fireproof());
 
-	public static final BlazeCoreResidue BLAZE_CORE_RESIDUE = new BlazeCoreResidue(new FabricItemSettings());
-
+	/* 
+	Raw Blaze Core:
+		Dropped from Blazes with a 1.25% chance.
+		Combine with Netherite Scrap in Smithing Table to get Refined Blaze Core
+	*/
+	public static final RawBlazeCore RAW_BLAZE_CORE = new RawBlazeCore(new FabricItemSettings()
+			.rarity(Rarity.RARE)
+			.fireproof()
+			.recipeRemainder(BLAZE_CORE_RESIDUE));
+	
 	// placeholders for crafting (it looks better like this I promise)
 	public final BetterKnockbackStick PLACEHOLDER_BETTER = new BetterKnockbackStick(new FabricItemSettings()
 			.rarity(Rarity.EPIC));
