@@ -2,19 +2,21 @@ package com.apples.opitems;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
+import net.minecraft.item.Items;
+import net.minecraft.item.MilkBucketItem;
 import net.minecraft.text.Text;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.FixedBufferInputStream;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.minecraft.entity.mob.BlazeEntity;
 
 import com.apples.opitems.items.*;
 import com.apples.opitems.enchantments.*;
@@ -58,8 +60,7 @@ public class OPItems implements ModInitializer {
 	public static final BlazeCoreResidue BLAZE_CORE_RESIDUE = new BlazeCoreResidue(new FabricItemSettings()
 			.rarity(Rarity.UNCOMMON)
 			.fireproof());
-
-	/* 
+	/*
 	Raw Blaze Core:
 		Dropped from Blazes with a 1.25% chance.
 		Combine with Netherite Scrap in Smithing Table to get Refined Blaze Core
@@ -86,7 +87,7 @@ public class OPItems implements ModInitializer {
 	public static Enchantment WEAKNESS_TIPPED = new WeaknessTipped();
 	public static Enchantment INVIS_HIT = new InvisHit();
 	public static Enchantment OP_ENCH = new OPEnch();
-	
+
 	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
     	.displayName(Text.literal("OP Items Group"))
     	.icon(() -> new ItemStack(BETTER_KNOCKBACK_STICK))
@@ -98,7 +99,7 @@ public class OPItems implements ModInitializer {
 			entries.add(REFINED_BLAZE_CORE);
     	})
     	.build();
-	
+
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
