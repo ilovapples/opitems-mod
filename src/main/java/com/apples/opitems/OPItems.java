@@ -7,12 +7,9 @@ import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
-import net.minecraft.item.Items;
-import net.minecraft.item.MilkBucketItem;
+import net.minecraft.item.*;
 import net.minecraft.text.Text;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
@@ -69,7 +66,9 @@ public class OPItems implements ModInitializer {
 			.rarity(Rarity.RARE)
 			.fireproof()
 			.recipeRemainder(BLAZE_CORE_RESIDUE));
-	
+
+	public static final Item YEET_BALL = new Item(new FabricItemSettings()
+			.maxCount(1));
 	// placeholders for crafting (it looks better like this I promise)
 	public final BetterKnockbackStick PLACEHOLDER_BETTER = new BetterKnockbackStick(new FabricItemSettings()
 			.rarity(Rarity.EPIC));
@@ -111,7 +110,8 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "fire_stick"), FIRE_STICK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "raw_blaze_core"), RAW_BLAZE_CORE); 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "refined_blaze_core"), REFINED_BLAZE_CORE); 
-		Registry.register(Registries.ITEM, new Identifier("opitems", "blaze_core_residue"), BLAZE_CORE_RESIDUE); 
+		Registry.register(Registries.ITEM, new Identifier("opitems", "blaze_core_residue"), BLAZE_CORE_RESIDUE);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "yeet_ball"), YEET_BALL);
 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);

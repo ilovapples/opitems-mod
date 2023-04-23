@@ -4,3 +4,4 @@ execute as @a[nbt={SelectedItem:{id:"opitems:raw_blaze_core"}}] at @a[nbt={Selec
 execute as @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] at @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] unless block ~ ~ ~ minecraft:water run effect give @s minecraft:fire_resistance 1 1 true
 execute at @e[type=item, name="Raw Blaze Core"] unless block ~ ~-.01 ~ air unless block ~ ~ ~ water run particle minecraft:lava ~ ~ ~ 0.25 0.25 0.25 1 1 force
 execute as @e[type=item,nbt={Item:{id:"minecraft:nether_star",Count:1b}}] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:netherite_ingot",Count:5b}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:blaze_rod",Count:16b}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:diamond_block",Count:4b}}] run function opitems:special_blaze
+execute as @a[nbt={SelectedItem:{id:"opitems:yeet_ball"}}] at @a[nbt={SelectedItem:{id:"opitems:yeet_ball"}}] run function opitems:yeet
