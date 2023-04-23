@@ -123,6 +123,6 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "invis_hit"), INVIS_HIT);
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "op_ench"), OP_ENCH);
 
-		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 300);
+		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}
 }
