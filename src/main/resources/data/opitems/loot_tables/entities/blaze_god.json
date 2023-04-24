@@ -7,7 +7,7 @@
         },
         {
           "condition": "random_chance",
-          "chance": 0.125
+          "chance": 0.5
         }
       ],
       "rolls": 1,
