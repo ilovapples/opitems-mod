@@ -2,7 +2,7 @@
 # OP Items
 
 ![MC Versions: 1.19.3-1.19.4](https://img.shields.io/badge/Versions-1.19.3--1.19.4-blue.svg?style=flat-square)
-![OP Items Versions: 1.0.6](https://img.shields.io/badge/OPItems--Versions-1.0.6-blue.svg?style=flat-square)
+![OP Items Versions: 1.0.6](https://img.shields.io/badge/OPItems--Versions-1.1.0-blue.svg?style=flat-square)
 ## Contents
 Adds 2 new items: the Knockback Stick, and the Better Knockback Stick, which are both very overpowered.
 
