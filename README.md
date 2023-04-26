@@ -2,7 +2,7 @@
 # OP Items
 
 ![MC Versions: 1.19.3-1.19.4](https://img.shields.io/badge/Versions-1.19.3--1.19.4-blue.svg?style=flat-square)
-![OP Items Versions: 1.0.6](https://img.shields.io/badge/OPItems--Versions-1.0.6-blue.svg?style=flat-square)
+![OP Items Versions: 1.1.0](https://img.shields.io/badge/OPItems--Versions-1.1.0-blue.svg?style=flat-square)
 ## Contents
 Adds 3 OP sticks: the Knockback Stick, the Better Knockback Stick, and the Fire Stick, which are all very overpowered.  
 Also adds 3 other items: Blaze Core Residue, Raw Blaze Core, and Refined Blaze Core.
