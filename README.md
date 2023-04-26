@@ -21,7 +21,7 @@ Also adds 3 other items: Blaze Core Residue, Raw Blaze Core, and Refined Blaze C
 ### Other Recipes
 | Refined Blaze Core | Blaze God Summoning |
 | - | - |
-| ![Refined Blaze Core Recipe](readme-assets/refined_blaze_core_recipe.png) | Drop: <br />`5 Netherite Ingots, 4 Diamond Blocks, 16 Blaze Rods, 1 Nether Star` <br />on the ground to summon the Blaze God. It will drop the [Raw Blaze Core](#contents).|
+| ![Refined Blaze Core Recipe](readme-assets/refined_blaze_core_recipe.png) | Drop: <br />`5 Netherite Ingots, 4 Diamond Blocks, 16 Blaze Rods, 1 Nether Star` <br />on the ground to summon the Blaze God. It has a 99% chance to drop the [Raw Blaze Core](#contents).|
 
 ## Changelog
 Click [here](CHANGELOG.md) for the changelog!
