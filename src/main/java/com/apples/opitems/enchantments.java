@@ -20,7 +20,7 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 10;
+            return 15;
         }
 
         @Override
@@ -44,7 +44,7 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 10;
+            return 15;
         }
 
         @Override
@@ -68,7 +68,7 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 10;
+            return 15;
         }
 
         @Override
@@ -92,7 +92,7 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 10;
+            return 15;
         }
 
         @Override
@@ -116,7 +116,7 @@ public class enchantments {
 
         @Override
         public int getMaxLevel() {
-            return 10;
+            return 15;
         }
         
         @Override
