@@ -85,12 +85,12 @@ public class OPItems implements ModInitializer {
 	public static final Item DRUM_STICK = new Item(new FabricItemSettings()
 			.maxCount(1));
 
-	public static Enchantment POISON_TIPPED = new PoisonTipped();
-	public static Enchantment FROST_TIPPED = new FrostTipped();
-	public static Enchantment WITHER_TIPPED = new WitherTipped();
-	public static Enchantment WEAKNESS_TIPPED = new WeaknessTipped();
-	public static Enchantment INVIS_HIT = new InvisHit();
-	public static Enchantment OP_ENCH = new OPEnch();
+	public static PoisonTipped POISON_TIPPED = new PoisonTipped();
+	public static FrostTipped FROST_TIPPED = new FrostTipped();
+	public static WitherTipped WITHER_TIPPED = new WitherTipped();
+	public static WeaknessTipped WEAKNESS_TIPPED = new WeaknessTipped();
+	public static InvisHit INVIS_HIT = new InvisHit();
+	public static OPEnch OP_ENCH = new OPEnch();
 
 	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
     	.displayName(Text.literal("OP Items Group"))
