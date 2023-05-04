@@ -1,0 +1,8 @@
+{
+  "opitems.drum_stick.drum_noise": {
+    "subtitle": "*drum noises*",
+    "sounds": [
+      "opitems:drum"
+    ]
+  }
+}

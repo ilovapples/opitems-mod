@@ -2,10 +2,14 @@ package com.apples.opitems;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.registry.Registry;
@@ -15,6 +19,7 @@ import net.minecraft.util.Rarity;
 
 import com.apples.opitems.items.*;
 import com.apples.opitems.enchantments.*;
+import com.apples.opitems.blocks.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,7 +63,7 @@ public class OPItems implements ModInitializer {
 	/*
 	Raw Blaze Core:
 		Dropped from Blazes with a 1.25% chance.
-		Combine with Netherite Scrap in Smithing Table to get Refined Blaze Core
+		Combine with Netherite Scrap in Smithing Table to get Refined Blaze Core (OR with a diamond and netherite scrap in a crafting table)
 	*/
 	public static final RawBlazeCore RAW_BLAZE_CORE = new RawBlazeCore(new FabricItemSettings()
 			.rarity(Rarity.RARE)
@@ -77,6 +82,8 @@ public class OPItems implements ModInitializer {
 	public final FireStick PLACEHOLDER_FIRE = new FireStick(new FabricItemSettings()
 			.rarity(Rarity.EPIC));
 
+	public static final Item DRUM_STICK = new Item(new FabricItemSettings()
+			.maxCount(1));
 
 	public static Enchantment POISON_TIPPED = new PoisonTipped();
 	public static Enchantment FROST_TIPPED = new FrostTipped();
@@ -97,6 +104,9 @@ public class OPItems implements ModInitializer {
     	})
     	.build();
 
+	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings.of(Material.WOOL).noBlockBreakParticles());
+	public static final Identifier DRUM_SOUND_ID = new Identifier("opitems:drum_noise");
+	public static SoundEvent DRUM_SOUND = SoundEvent.of(DRUM_SOUND_ID);
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -110,6 +120,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "refined_blaze_core"), REFINED_BLAZE_CORE); 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "blaze_core_residue"), BLAZE_CORE_RESIDUE);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "yeet_ball"), YEET_BALL);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "drum_stick"), DRUM_STICK);
 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);
@@ -121,6 +132,10 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "weakness_tipped"), WEAKNESS_TIPPED);
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "invis_hit"), INVIS_HIT);
 		Registry.register(Registries.ENCHANTMENT, new Identifier("opitems", "op_ench"), OP_ENCH);
+
+		Registry.register(Registries.BLOCK, new Identifier("opitems", "drum"), DRUM_BLOCK);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "drum"), new BlockItem(DRUM_BLOCK, new FabricItemSettings()));
+		Registry.register(Registries.SOUND_EVENT, DRUM_SOUND_ID, DRUM_SOUND);
 
 		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}

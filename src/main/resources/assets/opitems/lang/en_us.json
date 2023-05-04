@@ -27,6 +27,8 @@
   "item.opitems.blaze_core_residue.tooltip0": "Residue left over after the refining of a",
   "item.opitems.blaze_core_residue.tooltip1": "Raw Blaze Core into a Refined Blaze Core.",
 
+  "block.opitems.drum": "Drum",
+  "item.opitems.drum_stick": "Drum Stick",
 
   "item.opitems.placeholder_better": "Better Knockback Stick",
   "item.opitems.placeholder_normal": "Knockback Stick",

@@ -1,0 +1,11 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "opitems:block/drum/drum_top",
+    "down": "opitems:block/drum/drum_bottom",
+    "north": "opitems:block/drum/drum_side",
+    "south": "opitems:block/drum/drum_side",
+    "west": "opitems:block/drum/drum_side",
+    "east": "opitems:block/drum/drum_side"
+  }
+}
