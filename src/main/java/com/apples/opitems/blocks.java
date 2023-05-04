@@ -33,7 +33,7 @@ public class blocks {
             OPItems.LOGGER.info("OFF HAND: " + placedBy.getOffHandStack().getItem().getTranslationKey().toString());
             if (placedBy.getMainHandStack().getItem().getTranslationKey().toString() == "item.opitems.drum_stick" || placedBy.getOffHandStack().getItem().getTranslationKey().toString() == "item.opitems.drum_stick") {
                 CommandManager commandManager = placedBy.getServer().getCommandManager();
-                commandManager.execute(, "playsound opitems:opitems.drum_stick.drum_noise block @s");
+//                 commandManager.execute(, "playsound opitems:opitems.drum_stick.drum_noise block @s");
                 world.playSound(null, blockPos, OPItems.DRUM_SOUND, SoundCategory.BLOCKS, 1f, 1f);
                 return ActionResult.SUCCESS;
             } else {
