@@ -34,7 +34,7 @@ public class blocks {
                 
                 world.playSound(null, blockPos, OPItems.DRUM_SOUND, SoundCategory.BLOCKS, 1f, pitch);
                 return ActionResult.SUCCESS;
-            else if (
+            } else if (
                 Objects.equals(
                     placedBy.getMainHandStack().getItem().getTranslationKey, "item.opitems.drum_tuner")
              || Objects.equals(
