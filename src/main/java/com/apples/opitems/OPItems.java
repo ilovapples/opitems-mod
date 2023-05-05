@@ -86,6 +86,9 @@ public class OPItems implements ModInitializer {
 	public static final Item DRUM_STICK = new Item(new FabricItemSettings()
 			.maxCount(1));
 
+	public static final Item DRUM_TUNER = new Item(new FabricItemSettings()
+		    .maxCount(1));
+
 	public static PoisonTipped POISON_TIPPED = new PoisonTipped();
 	public static FrostTipped FROST_TIPPED = new FrostTipped();
 	public static WitherTipped WITHER_TIPPED = new WitherTipped();
@@ -107,6 +110,8 @@ public class OPItems implements ModInitializer {
 
 	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings.of(Material.WOOL).noBlockBreakParticles());
 	public static SoundEvent DRUM_SOUND = SoundEvent.of(new Identifier("opitems", "drum.drum_noise"));
+
+
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -136,6 +141,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier("opitems", "drum"), DRUM_BLOCK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum"), new BlockItem(DRUM_BLOCK, new FabricItemSettings()));
 		Registry.register(Registries.SOUND_EVENT, new Identifier("opitems", "drum.drum_noise"), DRUM_SOUND);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "drum_tuner"), DRUM_TUNER);
 
 		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}
