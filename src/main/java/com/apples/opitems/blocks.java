@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -20,6 +21,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import com.apples.opitems.OPItems;
 
 import javax.swing.*;
+import java.util.Objects;
 
 public class blocks {
     public static class Drum extends Block {
@@ -29,10 +31,10 @@ public class blocks {
 
         @Override
         public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
-            OPItems.LOGGER.info("MAIN HAND: " + placedBy.getMainHandStack().getItem().getTranslationKey().toString());
-            OPItems.LOGGER.info("OFF HAND: " + placedBy.getOffHandStack().getItem().getTranslationKey().toString());
-            if (placedBy.getMainHandStack().getItem().getTranslationKey().toString() == "item.opitems.drum_stick" || placedBy.getOffHandStack().getItem().getTranslationKey().toString() == "item.opitems.drum_stick") {
-                CommandManager commandManager = placedBy.getServer().getCommandManager();
+            OPItems.LOGGER.info("MAIN HAND: " + placedBy.getMainHandStack().getItem().getTranslationKey());
+            OPItems.LOGGER.info("OFF HAND: " + placedBy.getOffHandStack().getItem().getTranslationKey());
+            if (Objects.equals(placedBy.getMainHandStack().getItem().getTranslationKey(), "item.opitems.drum_stick") || Objects.equals(placedBy.getOffHandStack().getItem().getTranslationKey(), "item.opitems.drum_stick")) {
+//                CommandManager commandManager = placedBy.getServer().getCommandManager();
 //                 commandManager.execute(, "playsound opitems:opitems.drum_stick.drum_noise block @s");
                 world.playSound(null, blockPos, OPItems.DRUM_SOUND, SoundCategory.BLOCKS, 1f, 1f);
                 return ActionResult.SUCCESS;

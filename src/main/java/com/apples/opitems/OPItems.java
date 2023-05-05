@@ -6,12 +6,13 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.BlockItem;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
@@ -105,8 +106,7 @@ public class OPItems implements ModInitializer {
     	.build();
 
 	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings.of(Material.WOOL).noBlockBreakParticles());
-	public static final Identifier DRUM_SOUND_ID = new Identifier("opitems:drum_noise");
-	public static SoundEvent DRUM_SOUND = SoundEvent.of(DRUM_SOUND_ID);
+	public static SoundEvent DRUM_SOUND = SoundEvent.of(new Identifier("opitems", "drum.drum_noise"));
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -135,7 +135,7 @@ public class OPItems implements ModInitializer {
 
 		Registry.register(Registries.BLOCK, new Identifier("opitems", "drum"), DRUM_BLOCK);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum"), new BlockItem(DRUM_BLOCK, new FabricItemSettings()));
-		Registry.register(Registries.SOUND_EVENT, DRUM_SOUND_ID, DRUM_SOUND);
+		Registry.register(Registries.SOUND_EVENT, new Identifier("opitems", "drum.drum_noise"), DRUM_SOUND);
 
 		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}

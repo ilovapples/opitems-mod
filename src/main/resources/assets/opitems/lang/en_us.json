@@ -29,6 +29,7 @@
 
   "block.opitems.drum": "Drum",
   "item.opitems.drum_stick": "Drum Stick",
+  "subtitles.opitems.drum_noise": "*drum sound*",
 
   "item.opitems.placeholder_better": "Better Knockback Stick",
   "item.opitems.placeholder_normal": "Knockback Stick",
