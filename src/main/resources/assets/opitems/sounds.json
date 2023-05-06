@@ -2,7 +2,7 @@
   "drum.drum_noise": {
     "subtitle": "subtitles.opitems.drum_noise",
     "sounds": [
-      "opitems:drum"
+      "opitems:drum_1"
     ]
   }
 }

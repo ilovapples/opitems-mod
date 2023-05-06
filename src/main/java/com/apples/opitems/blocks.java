@@ -1,9 +1,16 @@
 package com.apples.opitems;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.Packet;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -13,12 +20,58 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import com.apples.opitems.OPItems;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.util.Objects;
 
 public class blocks {
-    public static class Drum extends Block {
+    public static class DrumBlockEntity extends BlockEntity {
+        private static float pitch = 0.20f;
+        private static int ticksPowered = 0;
+
+        public DrumBlockEntity(BlockPos pos, BlockState state) {
+            super(OPItems.DRUM_BLOCK_ENTITY, pos, state);
+        }
+
+        public static void tick(World world, BlockPos pos, BlockState state, DrumBlockEntity be) {
+            if (!world.isReceivingRedstonePower(pos)) {
+                ticksPowered = 0;
+            } else {
+                if (ticksPowered <= 1) {
+                    world.playSound(null, pos, OPItems.DRUM_SOUND, SoundCategory.BLOCKS, 1f, pitch);
+                }
+                ticksPowered++;
+            }
+        }
+
+        @Override
+        public void writeNbt(NbtCompound nbt) {
+            nbt.putFloat("drum_pitch", pitch);
+
+            super.writeNbt(nbt);
+        }
+
+        @Override
+        public void readNbt(NbtCompound nbt) {
+            super.readNbt(nbt);
+
+            pitch = nbt.getFloat("drum_pitch");
+        }
+
+        @Nullable
+        @Override
+        public Packet<ClientPlayPacketListener> toUpdatePacket() {
+            return BlockEntityUpdateS2CPacket.create(this);
+        }
+
+        @Override
+        public NbtCompound toInitialChunkDataNbt() {
+            return createNbt();
+        }
+    }
+
+    public static class Drum extends BlockWithEntity implements BlockEntityProvider {
         public float pitch = 0.20f;
 
         public Drum(Settings settings) {
@@ -50,5 +103,18 @@ public class blocks {
             }
         }
 
+        @Override
+        public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+            return new DrumBlockEntity(pos, state);
+        }
+
+        @Override
+        public BlockRenderType getRenderType(BlockState state) {
+            return BlockRenderType.MODEL;
+        }
+        @Override
+        public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+            return checkType(type, OPItems.DRUM_BLOCK_ENTITY, DrumBlockEntity::tick);
+        }
     }
 }

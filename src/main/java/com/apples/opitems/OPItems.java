@@ -3,15 +3,19 @@ package com.apples.opitems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.BlockItem;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.registry.Registry;
@@ -109,10 +113,17 @@ public class OPItems implements ModInitializer {
     	})
     	.build();
 
-	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings.of(Material.WOOL).noBlockBreakParticles());
+	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings
+			.of(Material.BAMBOO)
+			.noBlockBreakParticles()
+			.sounds(BlockSoundGroup.BAMBOO)
+			.strength(1.0f));
+	public static final BlockEntityType<DrumBlockEntity> DRUM_BLOCK_ENTITY = Registry.register(
+			Registries.BLOCK_ENTITY_TYPE,
+			new Identifier("opitems", "drum_block_entity"),
+			FabricBlockEntityTypeBuilder.create(blocks.DrumBlockEntity::new, DRUM_BLOCK).build()
+	);
 	public static SoundEvent DRUM_SOUND = SoundEvent.of(new Identifier("opitems", "drum.drum_noise"));
-
-
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
