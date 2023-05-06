@@ -39,12 +39,16 @@ public class blocks {
                     placedBy.getMainHandStack().getItem().getTranslationKey(), "item.opitems.drum_tuner")
              || Objects.equals(
                 placedBy.getOffHandStack().getItem().getTranslationKey(), "item.opitems.drum_tuner")) {
-                
+
                 pitch += 0.05f;
-                return ActionResult.PASS;
+                if (pitch >= 1.20f) {
+                    pitch = 0.20f;
+                }
+                return ActionResult.SUCCESS;
             } else {
                 return ActionResult.PASS;
             }
         }
+
     }
 }
