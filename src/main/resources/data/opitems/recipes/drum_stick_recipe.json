@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  D",
+    " / ",
+    "/  "
+  ],
+  "key": {
+    "D": {
+      "item": "opitems:drum"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "opitems:drum_stick",
+    "count": 1
+  },
+  "group": "knockback_sticks"
+}

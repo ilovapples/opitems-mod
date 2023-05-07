@@ -11,10 +11,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.BlockItem;
+import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
@@ -112,7 +109,6 @@ public class OPItems implements ModInitializer {
 			entries.add(REFINED_BLAZE_CORE);
     	})
     	.build();
-
 	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings
 			.of(Material.BAMBOO)
 			.noBlockBreakParticles()
