@@ -27,7 +27,7 @@ import java.util.Objects;
 
 public class blocks {
     public static class DrumBlockEntity extends BlockEntity {
-        private static float pitch = 0.20f;
+        private static float pitch = 0.50f;
         private static int ticksPowered = 0;
 
         public DrumBlockEntity(BlockPos pos, BlockState state) {
@@ -72,7 +72,7 @@ public class blocks {
     }
 
     public static class Drum extends BlockWithEntity implements BlockEntityProvider {
-        public float pitch = 0.20f;
+        public float pitch = 0.50f;
 
         public Drum(Settings settings) {
             super(settings);
