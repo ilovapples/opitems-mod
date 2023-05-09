@@ -35,6 +35,8 @@ public class blocks {
         }
 
         public static void tick(World world, BlockPos pos, BlockState state, DrumBlockEntity be) {
+            pitch = super.readNbt()
+
             if (!world.isReceivingRedstonePower(pos)) {
                 ticksPowered = 0;
             } else {
@@ -71,7 +73,7 @@ public class blocks {
         }
     }
 
-    public static class Drum extends BlockWithEntity implements BlockEntityProvider {
+    public static class Drum extends BlockWithEntity {
         public float pitch = 0.50f;
 
         public Drum(Settings settings) {
@@ -114,7 +116,7 @@ public class blocks {
         }
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return checkType(type, OPItems.DRUM_BLOCK_ENTITY, DrumBlockEntity::tick);
+            return checkType(type, OPItems.DRUM_BLOCK_ENTITY, (world1, pos, state1, be) -> DrumBlockEntity.tick(world1, pos, state1, be));
         }
     }
 }
