@@ -125,7 +125,8 @@ public class OPItems implements ModInitializer {
 			.maxCount(1));
 	public static final SpongeAK SPONGE_AK = new SpongeAK(new FabricItemSettings()
 			.maxCount(1));
-	public static final Item SPONGE_KATANA = (Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings().maxDamage(10000)));
+	public static final SpongeKatana SPONGE_KATANA = (SpongeKatana)((Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings().maxDamage(10000))));
+	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
