@@ -1,9 +1,9 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "ISI",
+        "BSI",
         "GSS",
-        "ISI"
+        "BSI"
     ],
     "key": {
         "S": {
@@ -13,6 +13,9 @@
             "item": "minecraft:gunpowder"
         },
         "I": {
+            "item": "minecraft:iron_ingot"
+        },
+        "B": {
             "item": "minecraft:iron_block"
         }
     },
