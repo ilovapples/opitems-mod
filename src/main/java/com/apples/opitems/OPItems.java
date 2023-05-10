@@ -1,19 +1,16 @@
 package com.apples.opitems;
 
+import com.apples.opitems.enchantments.PoisonTipped;
+import com.apples.opitems.enchantments.WitherTipped;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.item.v1.EquipmentSlotProvider;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
-import net.fabricmc.fabric.api.renderer.v1.model.FabricBakedModel;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
@@ -24,8 +21,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
 import com.apples.opitems.items.*;
-import com.apples.opitems.enchantments.*;
 import com.apples.opitems.blocks.*;
+import com.apples.opitems.enchantments.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -128,9 +125,7 @@ public class OPItems implements ModInitializer {
 			.maxCount(1));
 	public static final SpongeAK SPONGE_AK = new SpongeAK(new FabricItemSettings()
 			.maxCount(1));
-	public static final SpongeKatana SPONGE_KATANA = new SpongeKatana(new FabricItemSettings()
-			.maxCount(1));
-
+	public static final Item SPONGE_KATANA = (Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings().maxDamage(10000)));
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.

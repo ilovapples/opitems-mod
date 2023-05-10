@@ -4,6 +4,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
+import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.entity.player.PlayerEntity;
@@ -135,6 +136,7 @@ public class items {
             sponge_block.setVelocity(playerEntity.getRotationVector().multiply(2));
             sponge_block.setCustomName(Text.of("sponge_pistol_proj"));
             sponge_block.setCustomNameVisible(false);
+            sponge_block.
             world.spawnEntity(sponge_block);
 
             return TypedActionResult.success(playerEntity.getStackInHand(hand));
