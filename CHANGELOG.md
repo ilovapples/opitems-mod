@@ -27,6 +27,15 @@
     - A slimeball-looking item that makes you go really fast when you hold it with TNT (gives resistance so you don't die).
     - Unobtainable in Survival Mode.
     - For "testing".
+### v1.2.0-alpha
+  * Adds Drum, Drum Stick, and Drum Tuner.
+  * Adds Sponge Pistol, Sponge AK, Sponge Katana
+  * Sponge Pistol
+    - Shoots sponge blocks (as of 5/10/23, shoots sand blocks).
+  * Sponge AK
+    - Shoots sponge blocks (as of 5/10/23, shoots sand blocks), but they go twice as fast as from the Sponge Pistol.
+  * Sponge Katana
+    - An extremely powerful item with 46 (I think) attack speed and 15 attack damage. Also looks like a sponge.
 
 <!-- 
 | 1.0.0 | 1.0.6 | (Upcoming) 1.1.0 |
