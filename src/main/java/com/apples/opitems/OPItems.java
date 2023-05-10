@@ -1,7 +1,5 @@
 package com.apples.opitems;
 
-import com.apples.opitems.enchantments.PoisonTipped;
-import com.apples.opitems.enchantments.WitherTipped;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -98,17 +96,6 @@ public class OPItems implements ModInitializer {
 	public static InvisHit INVIS_HIT = new InvisHit();
 	public static OPEnch OP_ENCH = new OPEnch();
 
-	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
-    	.displayName(Text.literal("OP Items Group"))
-    	.icon(() -> new ItemStack(BETTER_KNOCKBACK_STICK))
-    	.entries((enabledFeatures, entries, operatorEnabled) -> {
-        	entries.add(KNOCKBACK_STICK);
-			entries.add(BETTER_KNOCKBACK_STICK);
-			entries.add(FIRE_STICK);
-			entries.add(RAW_BLAZE_CORE);
-			entries.add(REFINED_BLAZE_CORE);
-    	})
-    	.build();
 	public static final Drum DRUM_BLOCK = new Drum(FabricBlockSettings
 			.of(Material.BAMBOO)
 			.noBlockBreakParticles()
@@ -126,6 +113,24 @@ public class OPItems implements ModInitializer {
 	public static final SpongeAK SPONGE_AK = new SpongeAK(new FabricItemSettings()
 			.maxCount(1));
 	public static final SpongeKatana SPONGE_KATANA = (SpongeKatana)((Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings().maxDamage(10000))));
+	
+	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
+    	.displayName(Text.literal("OPItems Group"))
+    	.icon(() -> new ItemStack(FIRE_STICK))
+    	.entries((enabledFeatures, entries, operatorEnabled) -> {
+        	entries.add(KNOCKBACK_STICK);
+			entries.add(BETTER_KNOCKBACK_STICK);
+			entries.add(FIRE_STICK);
+			entries.add(RAW_BLAZE_CORE);
+			entries.add(REFINED_BLAZE_CORE);
+			entries.add(DRUM_BLOCK);
+			entries.add(DRUM_STICK);
+			entries.add(DRUM_TUNER);
+			entries.add(SPONGE_PISTOL);
+			entries.add(SPONGE_AK);
+			entries.add(SPONGE_KATANA);
+    	})
+    	.build();
 	
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
