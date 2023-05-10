@@ -5,3 +5,4 @@ execute as @a[nbt={SelectedItem:{id:"opitems:fire_stick"}}] at @a[nbt={SelectedI
 execute at @e[type=item, name="Raw Blaze Core"] unless block ~ ~-.01 ~ air unless block ~ ~ ~ water run particle minecraft:lava ~ ~ ~ 0.25 0.25 0.25 1 1 force
 execute as @e[type=item,nbt={Item:{id:"minecraft:nether_star",Count:1b}}] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:netherite_ingot",Count:5b}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:blaze_rod",Count:16b}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:diamond_block",Count:4b}}] run function opitems:special_blaze
 execute as @a[nbt={SelectedItem:{id:"opitems:yeet_ball"}}] at @a[nbt={SelectedItem:{id:"opitems:yeet_ball"}}] run function opitems:yeet
+execute as @e[type="minecraft:falling_block",name="sponge_pistol_proj"] at @e[type=player] positioned ~-0.5 ~-0.5 ~-0.5 as @e[type!="minecraft:falling_block", dx=0, dy=0, dz=0] run say ouch!

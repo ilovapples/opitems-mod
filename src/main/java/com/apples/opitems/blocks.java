@@ -35,7 +35,6 @@ public class blocks {
         }
 
         public static void tick(World world, BlockPos pos, BlockState state, DrumBlockEntity be) {
-            pitch = super.readNbt()
 
             if (!world.isReceivingRedstonePower(pos)) {
                 ticksPowered = 0;
@@ -74,7 +73,7 @@ public class blocks {
     }
 
     public static class Drum extends BlockWithEntity {
-        public float pitch = 0.50f;
+//        public float pitch = 0.50f;
 
         public Drum(Settings settings) {
             super(settings);
@@ -87,7 +86,7 @@ public class blocks {
             if (Objects.equals(placedBy.getMainHandStack().getItem().getTranslationKey(), "item.opitems.drum_stick")
              || Objects.equals(placedBy.getOffHandStack().getItem().getTranslationKey(), "item.opitems.drum_stick")) {
                 
-                world.playSound(null, blockPos, OPItems.DRUM_SOUND, SoundCategory.BLOCKS, 1f, pitch);
+                world.playSound(null, blockPos, OPItems.DRUM_SOUND, SoundCategory.BLOCKS, 1f, DrumBlockEntity.pitch);
                 return ActionResult.SUCCESS;
             } else if (
                 Objects.equals(
@@ -95,9 +94,9 @@ public class blocks {
              || Objects.equals(
                 placedBy.getOffHandStack().getItem().getTranslationKey(), "item.opitems.drum_tuner")) {
 
-                pitch += 0.05f;
-                if (pitch >= 1.20f) {
-                    pitch = 0.20f;
+                DrumBlockEntity.pitch += 0.05f;
+                if (DrumBlockEntity.pitch >= 1.20f) {
+                    DrumBlockEntity.pitch = 0.20f;
                 }
                 return ActionResult.SUCCESS;
             } else {

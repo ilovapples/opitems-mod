@@ -1,16 +1,19 @@
 package com.apples.opitems;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.EquipmentSlotProvider;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
+import net.fabricmc.fabric.api.renderer.v1.model.FabricBakedModel;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
@@ -120,6 +123,14 @@ public class OPItems implements ModInitializer {
 			FabricBlockEntityTypeBuilder.create(blocks.DrumBlockEntity::new, DRUM_BLOCK).build()
 	);
 	public static SoundEvent DRUM_SOUND = SoundEvent.of(new Identifier("opitems", "drum.drum_noise"));
+
+	public static final SpongePistol SPONGE_PISTOL = new SpongePistol(new FabricItemSettings()
+			.maxCount(1));
+	public static final SpongeAK SPONGE_AK = new SpongeAK(new FabricItemSettings()
+			.maxCount(1));
+	public static final SpongeKatana SPONGE_KATANA = new SpongeKatana(new FabricItemSettings()
+			.maxCount(1));
+
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -134,6 +145,10 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "blaze_core_residue"), BLAZE_CORE_RESIDUE);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "yeet_ball"), YEET_BALL);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum_stick"), DRUM_STICK);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "sponge_pistol"), SPONGE_PISTOL);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "sponge_ak"), SPONGE_AK);
+		Registry.register(Registries.ITEM, new Identifier("opitems", "sponge_katana"), SPONGE_KATANA);
+
 
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_better"), PLACEHOLDER_BETTER);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "placeholder_normal"), PLACEHOLDER_NORMAL);

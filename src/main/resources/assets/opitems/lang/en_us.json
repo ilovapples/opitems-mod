@@ -32,6 +32,13 @@
   "subtitles.opitems.drum_noise": "*drum sound*",
   "item.opitems.drum_tuner": "Drum Tuner",
 
+  "item.opitems.sponge_pistol": "Sponge Pistol",
+  "item.opitems.sponge_pistol.tooltip0": "",
+  "item.opitems.sponge_ak": "Sponge AK",
+  "item.opitems.sponge_ak.tooltip0": "",
+  "item.opitems.sponge_katana": "Sponge Katana",
+  "item.opitems.sponge_katana.tooltip0": "",
+
   "item.opitems.placeholder_better": "Better Knockback Stick",
   "item.opitems.placeholder_normal": "Knockback Stick",
   "item.opitems.placeholder_fire": "Fire Stick",

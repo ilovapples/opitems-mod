@@ -1,9 +1,18 @@
 package com.apples.opitems;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -86,6 +95,66 @@ public class items {
         public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
             tooltip.add(Text.translatable("item.opitems.blaze_core_residue.tooltip0"));
             tooltip.add(Text.translatable("item.opitems.blaze_core_residue.tooltip1"));
+        }
+    }
+
+    public static class SpongePistol extends Item {
+        public SpongePistol(Settings settings) {
+            super(settings);
+        }
+
+        @Override
+        public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+            playerEntity.playSound(SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.PLAYERS, 1, 1);
+            FallingBlockEntity sponge_block = new FallingBlockEntity(EntityType.FALLING_BLOCK, world);
+            sponge_block.teleport(playerEntity.getX(), playerEntity.getY()+1, playerEntity.getZ());
+            sponge_block.setVelocity(playerEntity.getRotationVector());
+            sponge_block.setCustomName(Text.of("sponge_pistol_proj"));
+            sponge_block.setCustomNameVisible(false);
+            world.spawnEntity(sponge_block);
+
+            return TypedActionResult.success(playerEntity.getStackInHand(hand));
+        }
+
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.sponge_pistol.tooltip0"));
+        }
+    }
+
+    public static class SpongeAK extends Item {
+        public SpongeAK(Settings settings) {
+            super(settings);
+        }
+
+        @Override
+        public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+            playerEntity.playSound(SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.PLAYERS, 1, 1);
+            FallingBlockEntity sponge_block = new FallingBlockEntity(EntityType.FALLING_BLOCK, world);
+            sponge_block.teleport(playerEntity.getX(), playerEntity.getY()+1, playerEntity.getZ());
+            sponge_block.setVelocity(playerEntity.getRotationVector().multiply(2));
+            sponge_block.setCustomName(Text.of("sponge_pistol_proj"));
+            sponge_block.setCustomNameVisible(false);
+            world.spawnEntity(sponge_block);
+
+            return TypedActionResult.success(playerEntity.getStackInHand(hand));
+        }
+
+
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.sponge_ak.tooltip0"));
+        }
+    }
+
+    public static class SpongeKatana extends Item {
+        public SpongeKatana(Settings settings) {
+            super(settings);
+        }
+
+        @Override
+        public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+            tooltip.add(Text.translatable("item.opitems.sponge_katana.tooltip0"));
         }
     }
 }
