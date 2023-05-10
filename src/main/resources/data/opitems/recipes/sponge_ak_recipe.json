@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ISI",
+        "GGS",
+        "ISI"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:sponge"
+        },
+        "G": {
+            "item": "minecraft:gunpowder"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        }
+    },
+    "result": {
+        "item": "opitems:sponge_ak",
+        "count": 1
+    },
+    "group": "knockback_sticks"
+}
