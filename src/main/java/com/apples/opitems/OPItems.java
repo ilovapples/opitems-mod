@@ -112,7 +112,8 @@ public class OPItems implements ModInitializer {
 			.maxCount(1));
 	public static final SpongeAK SPONGE_AK = new SpongeAK(new FabricItemSettings()
 			.maxCount(1));
-	public static final SpongeKatana SPONGE_KATANA = (SpongeKatana)((Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings().maxDamage(10000))));
+	public static final SpongeKatana SPONGE_KATANA = (SpongeKatana)((Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings()
+											     .maxDamage(10000))));
 	
 	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
     	.displayName(Text.literal("OPItems Group"))
