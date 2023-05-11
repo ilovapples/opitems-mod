@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NBS",
+        " /B",
+        "/ N"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:sponge"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "N": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "B": {
+            "item": "minecraft:netherite_block"
+        }
+    },
+    "result": {
+        "item": "opitems:sponge_katana",
+        "count": 1
+    },
+    "group": "knockback_sticks"
+}
