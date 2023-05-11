@@ -3,13 +3,13 @@
   "id": "opitems",
   "version": "${version}",
 
-  "name": "OP Items",
-  "description": "This is my very bad test mod.",
+  "name": "OPItems",
+  "description": "Adds a bunch of OP items (the name is very creative, I know).",
   "authors": [
     "ilovapples"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
+    "homepage": "https://ilovapples.github.io/wiki/opitems",
     "sources": "https://github.com/ilovapples/opitems-mod"
   },
 
