@@ -6,7 +6,7 @@
 (U): Unimplemented
 ```
 
-# Ideas for Fire Stick
+# Ideas for Fire Stick (and related items)
 
 #### ALL FIRE RELATED ITEMS ARE FIREPROOF (duh)
 
@@ -20,7 +20,7 @@ Water only negates Fire Resistance for Fire Stick and Raw Blaze Core, and it als
 | Raw Blaze Core | `(I):` Fire resistance | `(I):` Sets user on fire when holding | `(M):` Very rare drop from blazes (Drops from Blaze God, summoned by doing [this](README.md#other-recipes)) | `(I):` Use to make the Refined Blaze Core |
 | Refined Blaze Core | `(I):` N/A | `(I):` N/A | `(I):` Smith together Raw Blaze Core and Netherite Scrap | `(I):` Used to craft Fire Stick |
 
-# Ideas for Sponge Items
+# Ideas for Sponge Items and Drum Items
 
 #### ALL ITEMS ARE MADE OF SPONGE (DUH)
 
