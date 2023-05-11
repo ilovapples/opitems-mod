@@ -30,3 +30,6 @@ Water only negates Fire Resistance for Fire Stick and Raw Blaze Core, and it als
 | Sponge Pistol | N/A | N/A | `(I):` Craft it | `(P):` Shoots Sponge |
 | Sponge AK | `(I):` Larger range than Sponge Pistol | N/A | `(I):` Craft it | `(P):` Shoots Sponge |
 | Sponge Katana | N/A | N/A | `(I):` Craft it | `(I):` Very powerful and fast |
+| Drum (It's a block!) | N/A | N/A | `(I):` Craft it | `(I):` Makes drum sounds when hit with Drum Stick, tune with Drum Tuner. |
+| Drum Stick | N/A | N/A | `(I):` Craft it | `(I):` Play the drum. |
+| Drum Tuner | N/A | N/A | `(I):` Craft it | `(I):` Tune the drum. |
