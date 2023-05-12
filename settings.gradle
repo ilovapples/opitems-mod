@@ -8,14 +8,3 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
-loom {
-    splitEnvironmentSourceSets()
-
-    mods {
-        opitems {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
-}
