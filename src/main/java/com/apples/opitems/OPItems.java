@@ -29,7 +29,7 @@ import net.minecraft.util.Rarity;
 import com.apples.opitems.items.*;
 import com.apples.opitems.blocks.*;
 import com.apples.opitems.enchantments.*;
-import com.apples.opitems.entities;
+import com.apples.opitems.entities.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
