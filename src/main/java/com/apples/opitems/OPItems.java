@@ -1,14 +1,22 @@
 package com.apples.opitems;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
@@ -21,6 +29,7 @@ import net.minecraft.util.Rarity;
 import com.apples.opitems.items.*;
 import com.apples.opitems.blocks.*;
 import com.apples.opitems.enchantments.*;
+import com.apples.opitems.entities;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -112,9 +121,17 @@ public class OPItems implements ModInitializer {
 			.maxCount(1));
 	public static final SpongeAK SPONGE_AK = new SpongeAK(new FabricItemSettings()
 			.maxCount(1));
-	public static final SpongeKatana SPONGE_KATANA = (SpongeKatana)((Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings()
-											     .maxDamage(10000))));
-	
+	public static final Item SPONGE_KATANA = (Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings()
+											     .maxDamage(10000)));
+
+	public static final EntityType<entities.MimicEntity> MIMIC_ENTITY = Registry.register(
+			Registries.ENTITY_TYPE,
+			new Identifier("opitems", "mimic"),
+			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, entities.MimicEntity::new).dimensions(EntityDimensions.fixed(0.875f, 0.875f)).build()
+	);
+
+	public static final EntityModelLayer MODEL_MIMIC_LAYER = new EntityModelLayer(new Identifier("opitems", "mimic"), "main");
+
 	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
     	.displayName(Text.literal("OPItems Group"))
     	.icon(() -> new ItemStack(FIRE_STICK))
@@ -167,6 +184,12 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum"), new BlockItem(DRUM_BLOCK, new FabricItemSettings()));
 		Registry.register(Registries.SOUND_EVENT, new Identifier("opitems", "drum.drum_noise"), DRUM_SOUND);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum_tuner"), DRUM_TUNER);
+
+		FabricDefaultAttributeRegistry.register(MIMIC_ENTITY, entities.MimicEntity.createMobAttributes());
+		EntityRendererRegistry.register(MIMIC_ENTITY, (context) -> {
+			return new entities.MimicEntityRenderer(context);
+		});
+		EntityModelLayerRegistry.registerModelLayer(MODEL_MIMIC_LAYER, entities.MimicEntityModel::getTexturedModelData);
 
 		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}
