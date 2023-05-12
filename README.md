@@ -34,14 +34,16 @@ The dependencies are:
 
 ## Build
 If you want pre-releases (usually won't be very polished on the new bits), check out the Actions tab!  
-The latest action's artifact is a .zip file containing the .jar file for the latest pre-release.  
+The latest (successful) action's artifact is a .zip file containing the .jar file for the latest pre-release.  
 <br />
+
+### Building
 `git clone` the repo, navigate to it, and run one of the following in the terminal/command prompt:
 - On Windows:
   - `gradlew.bat build`
   - Or run `BUILD_MOD.bat`
 - On Linux/MacOS X:
-  - `./gradlew build`
+  - `./gradlew build` (If it doesn't let you, run `chmod +x gradlew` first!)
   - Or run `BUILD_MOD.sh` with `bash`
   
 The .jar file will be in the build/libs directory.
