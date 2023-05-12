@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.apples.opitems.OPItems"
+    ],
+    "client": [
+      "com.apples.opitems.OPItemsClient"
     ]
   },
   "mixins": [

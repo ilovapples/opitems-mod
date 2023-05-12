@@ -124,14 +124,6 @@ public class OPItems implements ModInitializer {
 	public static final Item SPONGE_KATANA = (Item)(new SwordItem(ToolMaterials.NETHERITE, 15, 50.0f, new FabricItemSettings()
 											     .maxDamage(10000)));
 
-	public static final EntityType<entities.MimicEntity> MIMIC_ENTITY = Registry.register(
-			Registries.ENTITY_TYPE,
-			new Identifier("opitems", "mimic"),
-			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, entities.MimicEntity::new).dimensions(EntityDimensions.fixed(0.875f, 0.875f)).build()
-	);
-
-	public static final EntityModelLayer MODEL_MIMIC_LAYER = new EntityModelLayer(new Identifier("opitems", "mimic"), "main");
-
 	ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("opitems", "op_items_group"))
     	.displayName(Text.literal("OPItems Group"))
     	.icon(() -> new ItemStack(FIRE_STICK))
@@ -150,6 +142,13 @@ public class OPItems implements ModInitializer {
     	})
     	.build();
 	
+	public static final EntityType<SpongeProjectileEntity> SPONGE_PROJ_ENTITY = Registry.register(
+		Registries.ENTITY_TYPE,
+		new Identifier("opitems", "sponge_projectile"),
+		FabricBlockEntityTypeBuilder.create(SpawnGroup.CREATURE, SpongeProjectileEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+	);
+	
+
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -185,11 +184,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.SOUND_EVENT, new Identifier("opitems", "drum.drum_noise"), DRUM_SOUND);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum_tuner"), DRUM_TUNER);
 
-		FabricDefaultAttributeRegistry.register(MIMIC_ENTITY, entities.MimicEntity.createMobAttributes());
-		EntityRendererRegistry.register(MIMIC_ENTITY, (context) -> {
-			return new entities.MimicEntityRenderer(context);
-		});
-		EntityModelLayerRegistry.registerModelLayer(MODEL_MIMIC_LAYER, entities.MimicEntityModel::getTexturedModelData);
+		FabricDefaultAttributeRegistry.register(SPONGE_PROJ_ENTITY, SpongeProjectileEntity.createMobAttributes());
 
 		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}
