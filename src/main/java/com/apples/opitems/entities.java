@@ -1,6 +1,10 @@
 package com.apples.opitems;
 
 import com.apples.opitems.OPItemsClient;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 
 
 public class entities {
@@ -12,7 +16,7 @@ public class entities {
 
     }
 
-    public class SpongeProjectileEntityRenderer extends MobEntityRenderer<SpongeProjectileEntity, SpongeProjectileEntityModel> {
+    public static class SpongeProjectileEntityRenderer extends MobEntityRenderer<SpongeProjectileEntity, SpongeProjectileEntityModel> {
         public SpongeProjectileEntityRenderer(EntityRendererFactory.Context context) {
             super(context, new SpongeProjectileEntityModel(context.getPart(OPItemsClient.MODEL_SPONGE_PROJ_LAYER)), 0.5f);
         }

@@ -2,6 +2,13 @@ package com.apples.opitems;
 
 import com.apples.opitems.OPItems;
 import com.apples.opitems.entities.*;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class OPItemsClient implements ClientModInitializer {
@@ -9,10 +16,10 @@ public class OPItemsClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.INSTANCE.register(OPItems.SPONGE_PROJ_ENTITY, (context) -> {
+        EntityRendererRegistry.register(OPItems.SPONGE_PROJ_ENTITY, (context) -> {
             return new SpongeProjectileEntityRenderer(context);
         });
 
-        EntityModelLayerRegistry,registerModelLayer(MODEL_SPONGE_PROJ_LAYER, SpongeProjectileEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(MODEL_SPONGE_PROJ_LAYER, SpongeProjectileEntityModel::getTexturedModelData);
     }
 }
