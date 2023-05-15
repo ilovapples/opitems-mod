@@ -80,13 +80,13 @@ publishing {
 }
 
 
-loom {
-    splitEnvironmentSourceSets()
+// loom {
+//     splitEnvironmentSourceSets()
 
-    mods {
-        opitems {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
-}
+//     mods {
+//         opitems {
+//             sourceSet sourceSets.main
+//             sourceSet sourceSets.client
+//         }
+//     }
+// }

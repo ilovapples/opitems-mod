@@ -142,11 +142,11 @@ public class OPItems implements ModInitializer {
     	})
     	.build();
 	
-	public static final EntityType<SpongeProjectileEntity> SPONGE_PROJ_ENTITY = Registry.register(
-		Registries.ENTITY_TYPE,
-		new Identifier("opitems", "sponge_projectile"),
-		FabricBlockEntityTypeBuilder.create(SpawnGroup.CREATURE, SpongeProjectileEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
-	);
+	// public static final EntityType<SpongeProjectileEntity> SPONGE_PROJ_ENTITY = Registry.register(
+	// 	Registries.ENTITY_TYPE,
+	// 	new Identifier("opitems", "sponge_projectile"),
+	// 	FabricBlockEntityTypeBuilder.create(SpawnGroup.CREATURE, SpongeProjectileEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+	// );
 	
 
 	public void onInitialize() {
@@ -184,7 +184,7 @@ public class OPItems implements ModInitializer {
 		Registry.register(Registries.SOUND_EVENT, new Identifier("opitems", "drum.drum_noise"), DRUM_SOUND);
 		Registry.register(Registries.ITEM, new Identifier("opitems", "drum_tuner"), DRUM_TUNER);
 
-		FabricDefaultAttributeRegistry.register(SPONGE_PROJ_ENTITY, SpongeProjectileEntity.createMobAttributes());
+		// FabricDefaultAttributeRegistry.register(SPONGE_PROJ_ENTITY, SpongeProjectileEntity.createMobAttributes());
 
 		FuelRegistry.INSTANCE.add(BLAZE_CORE_RESIDUE, 10000);
 	}
